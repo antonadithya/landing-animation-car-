@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {     /**/
+    background:#F0F0F0;
+    color: #272829;
+}
+
+.header{         /**/
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: transparent;
+    padding: 25px 8% ;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    
+}
+.logo{        /**/
+    font-size: 25px;
+    font-weight: 600;
+    color:#272829 ;
+    text-decoration: none;
+    /**/
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+   
+
+}
+
+ nav a {     /**/
+   display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #272829;
+    text-decoration: none;
+    padding: 0px 24px;
+    transition: .3s;
+      /**/
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i)); 
+   
+ }
+
+ nav a:hover, /**/
+ nav a.active{
+    color: yellowgreen;
+ }
+
+
+
+ .social{     /**/
+    width: 115px;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+   
+ }
+
+ .social a{      /**/
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background: transparent;
+    width: 30px;
+    height: 30px;
+    border: 2px solid transparent;
+    transform: rotate(45deg);
+    transition: all 0.5s;
+
+    /**/
+    opacity: 0;
+    animation: slideSil .5s ease forwards;    
+    animation-delay: calc(.2s * var(--i)); 
+ }
+
+ .social a:hover{   /**/
+    border-color: #fff;
+
+    
+ }
+ .social a i{    /**/
+    font-size: 18px;
+    transform: rotate(-45deg);
+    color: #F0F0F0;
+
+ }
+ .section{       /**/
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 50px 8% 0px;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+
+ }
+
+ .hero-content{       /**/
+    max-width: 50%;
+ }
+
+ .hero-content h1{     /**/
+    color: #272829;
+    font-size: 47px;
+    line-height:1.0;
+
+    opacity: 0;
+    animation: slidebottom 1s ease forwards;
+    animation-delay: 1s;
+   
+ }
+ .hero-content h3{      /**/
+    color: yellowgreen;
+    font-size: 40px;
+
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1.3s;
+ }
+
+ .hero-content p{      /**/
+    font-size: 12px;
+    font-weight: 500;
+    padding: 15px 0px 30px;
+
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;    
+    animation-delay: 1.6s; 
+ }
+ .hero-content button{   /**/
+     
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: yellowgreen; /* Set your desired background color here */
+        color: white; /* Text color */
+        border: none;
+        border-radius: 20px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.1); /* 3D box shadow effect */
+        transition: transform 0.2s, box-shadow 0.3s;
+
+        opacity: 0;
+        animation: slideTop 1s ease forwards;    
+        animation-delay: 2s; 
+ }
+ .hero-content button:hover { /**/
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2), 0px 12px 16px rgba(0, 0, 0, 0.2); /* Adjusted shadow on hover */
+  }
+
+  .home-img{            /**/
+   position: relative;
+   width: 350px;
+   height: 350px;
+   transform: rotate(45deg);
+   right: -7%;
+  
+  }                 
+                    
+.rhombus{              /**/
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background-color: #FFF;
+   border: 22px solid yellowgreen;
+
+   opacity: 0;
+   animation: zoomOut 1s ease forwards;    
+   animation-delay: 2s; 
+}
+
+.home-img .rhombus img{/**/
+   position: absolute;
+   max-width: 650px;
+   transform: rotate(-45deg);
+   top: 110px;
+   right: -85px;
+
+   opacity: 0;
+   animation: car 1s ease forwards;    
+   animation-delay: 2s; 
+} 
+
+.section .rhombus2{ /**/
+
+   position: absolute;
+   width: 750px;
+   height: 750px;
+   background-color: yellowgreen;
+   transform: rotate(45deg);
+   left: 85%;
+   bottom: 25%;
+   z-index: -1;
+   overflow: hidden;
+
+   opacity: 0;
+   animation:  rhombus2 1s ease forwards;  
+}
+
+/* KEYFRAME ANIMATION*/
+
+@keyframes slideRight{  /*top logo*/
+   0%{
+      transform: translatex(-100px);
+      opacity: 0;
+   }
+   100%{
+      transform: translatex(0px);
+      opacity: 1;
+   }
+}
+
+@keyframes slideTop{   /*top navigation bar */
+   0%{
+      transform: translateY(100px);
+      opacity: 0;
+   }
+   100%{
+      transform: translateY(0px);
+      opacity: 1;
+   }
+}
+
+@keyframes slideSil{  /*top social icon*/
+   0%{
+      transform: translatex(100px) rotate(45deg) ;
+      opacity: 0;
+   }
+   100%{
+      transform: translatex(0px) rotate(45deg) ;
+      opacity: 1;
+   }
+}
+
+@keyframes slidebottom{   /* h1  */
+   0%{
+      transform: translateY(-100px);
+      opacity: 0;
+   }
+   100%{
+      transform: translateY(0px);
+      opacity: 1;
+   }
+}
+
+@keyframes slideLeft{  /* hero-paragraph */
+   0%{
+      transform: translatex(100px);
+      opacity: 0;
+   }
+   100%{
+      transform: translatex(0px) ;
+      opacity: 1;
+   }
+}
+
+@keyframes zoomOut{  /* rhombus 1 */
+   0%{
+      transform: scale(1.1);
+      opacity: 0;
+   }
+   100%{
+      transform: scale(1) ;
+      opacity: 1;
+   }
+}
+
+@keyframes car{  /* car */
+   0%{
+      transform: translate(300px,-300px) scale(0) rotate(-45deg);
+      opacity: 0;
+   }
+   100%{
+      transform:translate(0px,0px) scale(1) rotate(-45deg);
+      opacity: 1;
+   }
+}
+
+
+
+@keyframes rhombus2{ /*rhombus2nd*/
+    0%{
+      left: 121%;
+      opacity: 0;
+    }
+    100%{
+      left: 85%;
+      opacity: 1;
+    }
+}
+   
+
